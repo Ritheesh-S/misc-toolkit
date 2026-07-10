@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anki Deck Creator</title>
+  <link rel="stylesheet" href="../../common/style.css" />
+  <link rel="stylesheet" href="ankiDeck.css" />
+</head>
+<body>
+  <header class="top-ribbon">
+    <div class="brand"><a href="../../index.html">Misc Toolkit</a></div>
+    <nav class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="../../common/tools.html">Tools</a>
+      <a href="ankiDeckMaker.html" class="active">Anki Deck</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="deck-card">
+      <h1>Anki Deck Creator</h1>
+
+      <div class="description">
+        <strong>How it works:</strong><br>
+        • Press <strong>Enter</strong> inside Front or Back to move to a new row.<br>
+        • If you only fill Front and press Enter, new Front rows are created automatically.<br>
+        • Later, paste return-separated Back values into any Back cell and they will distribute automatically.<br>
+        • Export creates a tab-separated .txt file for importing into Anki.
+      </div>
+
+      <div class="controls">
+        <button id="addRowBtn">Add Row</button>
+        <button id="exportBtn">Export .txt</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="cardTable">
+          <thead>
+            <tr>
+              <th class="row-number">#</th>
+              <th>Front</th>
+              <th>Back</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="footer-note">
+        Export format: <strong>Front[TAB]Back</strong><br>
+        Compatible with import into <strong>TSV / tab-separated</strong> Anki decks.
+      </div>
+    </section>
+  </main>
+
+  <script src="../../common/main.js"></script>
+  <script src="ankiDeck.js"></script>
+</body>
+</html>
