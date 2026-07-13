@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flash Card Review | Misc Toolkit</title>
+  <link rel="stylesheet" href="../../common/style.css" />
+  <link rel="stylesheet" href="flashCard.css" />
+</head>
+<body>
+  <header class="top-ribbon">
+    <div class="brand"><a href="../../index.html">Misc Toolkit</a></div>
+    <nav class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="../../common/tools.html">Tools</a>
+      <a href="flashCard.html" class="active">Flash Card</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="deck-card flash-layout">
+      <div class="flash-sidebar">
+        <div class="tool-header">
+          <h1>Flash Card Review</h1>
+          <p>Load a <strong>deck.txt</strong> file with tab-separated Front and Back text, then review cards randomly like an Anki-style session.</p>
+        </div>
+
+        <div class="loader-panel">
+          <div class="file-input-row">
+            <label for="flashFileInput">Select deck.txt</label>
+            <input id="flashFileInput" type="file" accept=".txt" />
+          </div>
+          <div class="deck-status" id="deckNameStatus">No deck loaded yet.</div>
+        </div>
+
+        <div class="flash-actions">
+          <button id="showNextBtn" type="button">Next card</button>
+          <button id="shuffleBtn" type="button" class="secondary">Shuffle deck</button>
+          <button id="restartBtn" type="button" class="secondary">Restart deck</button>
+          <button id="flipBtn" type="button" class="secondary">Flip card</button>
+        </div>
+
+        <div class="help-text" id="errorMessage"></div>
+      </div>
+
+      <div class="flash-card" id="cardPanel" role="button" tabindex="0" aria-label="Flash card. Click to flip.">
+        <div class="card-face" id="frontFaceWrapper">
+          <strong>Front</strong>
+          <div id="frontFace" class="card-text">Load a deck file to begin.</div>
+        </div>
+        <div class="card-face" id="backFaceWrapper" style="display: none;">
+          <strong>Back</strong>
+          <div id="backFace" class="card-text">Flip the card to reveal the back side.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="../../index.html">Home</a>
+    <a href="../../common/tools.html">Tools</a>
+    <a href="../../common/about.html">About</a>
+    <a href="../../common/contact.html">Contact</a>
+  </footer>
+
+  <script src="flashCard.js"></script>
+</body>
+</html>

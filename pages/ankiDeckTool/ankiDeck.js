@@ -1,6 +1,8 @@
 const tableBody = document.getElementById('tableBody');
 const addRowBtn = document.getElementById('addRowBtn');
+const clearBtn = document.getElementById('clearBtn');
 const exportBtn = document.getElementById('exportBtn');
+const deckNameInput = document.getElementById('deckNameInput');
 
 function createCellTextarea(type, rowIndex) {
   const textarea = document.createElement('textarea');
@@ -100,11 +102,30 @@ function addRow(frontValue = '', backValue = '') {
   updateRowNumbers();
 }
 
-if (tableBody && addRowBtn && exportBtn) {
+function clearRows() {
+  tableBody.innerHTML = '';
+  addRow();
+}
+
+function getSafeDeckName() {
+  const rawName = (deckNameInput?.value || '').trim();
+  const safeName = rawName
+    .replace(/[^a-z0-9-_ ]/gi, '')
+    .trim()
+    .replace(/\s+/g, '_');
+
+  return safeName || 'anki_deck';
+}
+
+if (tableBody && addRowBtn && clearBtn && exportBtn) {
   addRow();
 
   addRowBtn.addEventListener('click', () => {
     addRow();
+  });
+
+  clearBtn.addEventListener('click', () => {
+    clearRows();
   });
 
   exportBtn.addEventListener('click', () => {
@@ -132,7 +153,7 @@ if (tableBody && addRowBtn && exportBtn) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'anki_deck.txt';
+    a.download = `${getSafeDeckName()}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

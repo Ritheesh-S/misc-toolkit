@@ -17,22 +17,42 @@
     </header>
 
     <main>
-      <section class="page">
-        <h1>Tools Hub</h1>
-        <p>This is the first linked page for your growing toolkit. Add more HTML apps here as the project expands.</p>
+      <section class="page tools-page">
+        <div class="tools-layout">
+          <div class="tools-intro">
+            <h1>Tools Hub</h1>
+            <p>This is the first linked page for your growing toolkit. Add more HTML apps here as the project expands.</p>
+            <p class="tools-note">Planned ideas: a calculator, a note app, a color picker, and small utilities.</p>
+          </div>
 
-        <div class="card" style="margin-top: 1.5rem;">
-          <h2>Anki Deck Maker</h2>
-          <p>
-            Create flashcard decks quickly by pasting content from online forms, spreadsheets, or copied notes.
-            Enter fronts and backs, split pasted lists into rows, and export a tab-separated file for Anki.
-          </p>
-          <a class="btn btn-primary" href="../pages/ankiDeckTool/ankiDeckMaker.html">Open tool</a>
+          <div class="tools-list">
+            <div class="card tool-card">
+              <h2>Anki Deck Maker</h2>
+              <p>
+                Create flashcard decks quickly by pasting content from online forms, spreadsheets, or copied notes.
+                Enter fronts and backs, split pasted lists into rows, and export a tab-separated file for Anki.
+              </p>
+              <a class="btn btn-primary" href="../pages/ankiDeckTool/ankiDeckMaker.html">Open tool</a>
+            </div>
+            <div class="card tool-card">
+              <h2>Flash Card Review</h2>
+              <p>
+                Load a <strong>deck.txt</strong> file and review cards randomly. Flip cards to see the back and move through the deck at your own pace.
+              </p>
+              <a class="btn btn-primary" href="../pages/flashCardTool/flashCard.html">Open tool</a>
+            </div>
+          </div>
         </div>
-
-        <p style="margin-top: 1.5rem;">Planned ideas: a calculator, a note app, a color picker, and small utilities.</p>
       </section>
+
     </main>
+
+    <footer class="site-footer">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </footer>
 
     <script src="main.js"></script>
   </body>

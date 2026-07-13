@@ -21,38 +21,57 @@
     <section class="deck-card">
       <h1>Anki Deck Creator</h1>
 
-      <div class="description">
-        <strong>How it works:</strong><br>
-        • Press <strong>Enter</strong> inside Front or Back to move to a new row.<br>
-        • If you only fill Front and press Enter, new Front rows are created automatically.<br>
-        • Later, paste return-separated Back values into any Back cell and they will distribute automatically.<br>
-        • Export creates a tab-separated .txt file for importing into Anki.
-      </div>
+      <div class="workspace-layout">
+        <div class="side-panel">
+          <div class="description">
+            <strong>How it works:</strong><br>
+            • Press <strong>Enter</strong> inside Front or Back to move to a new row.<br>
+            • If you only fill Front and press Enter, new Front rows are created automatically.<br>
+            • Later, paste return-separated Back values into any Back cell and they will distribute automatically.<br>
+            • Export creates a tab-separated .txt file for importing into Anki.
+          </div>
 
-      <div class="controls">
-        <button id="addRowBtn">Add Row</button>
-        <button id="exportBtn">Export .txt</button>
-      </div>
+          <div class="controls">
+            <button id="addRowBtn">Add Row</button>
+            <button id="clearBtn">Clear</button>
+            <button id="exportBtn">Export .txt</button>
+          </div>
 
-      <div class="table-wrapper">
-        <table id="cardTable">
-          <thead>
-            <tr>
-              <th class="row-number">#</th>
-              <th>Front</th>
-              <th>Back</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody"></tbody>
-        </table>
-      </div>
+          <div class="deck-name-row">
+            <label for="deckNameInput">Deck Name</label>
+            <input id="deckNameInput" type="text" placeholder="My Anki Deck" />
+          </div>
 
-      <div class="footer-note">
-        Export format: <strong>Front[TAB]Back</strong><br>
-        Compatible with import into <strong>TSV / tab-separated</strong> Anki decks.
+          <div class="footer-note">
+            Export format: <strong>Front[TAB]Back</strong><br>
+            Compatible with import into <strong>TSV / tab-separated</strong> Anki decks.
+          </div>
+        </div>
+
+        <div class="table-panel">
+          <div class="table-wrapper">
+            <table id="cardTable">
+              <thead>
+                <tr>
+                  <th class="row-number">#</th>
+                  <th>Front</th>
+                  <th>Back</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <a href="../../index.html">Home</a>
+    <a href="../../common/tools.html">Tools</a>
+    <a href="../../common/about.html">About</a>
+    <a href="../../common/contact.html">Contact</a>
+  </footer>
 
   <script src="../../common/main.js"></script>
   <script src="ankiDeck.js"></script>
